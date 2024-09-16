@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { apis } from "~/config";
+import { apiList } from "~/config";
 
 export default function Sidebar() {
   return (
@@ -12,7 +12,7 @@ export default function Sidebar() {
       </Link>
       <h2 className="text-lg font-bold mb-4">Available APIs</h2>
       <ul className="space-y-2">
-        {apis.map((api) => (
+        {apiList.map((api) => (
           <li key={api.slug}>
             <Link
               to={`/apis/${api.slug}`}
