@@ -28,4 +28,12 @@ Then run the app in production mode:
 npm start
 ```
 
-TODO choose a deployment platform
+## Heroku Deployment
+
+```sh
+heroku login
+heroku git:remote -a devportaldemo
+git push heroku main
+```
+
+App Url: <https://devportal-5a04de267e90.herokuapp.com/>

@@ -10,8 +10,7 @@ import Sidebar from "./components/Sidebar";
 
 import "./tailwind.css";
 
-export default function App() {
-  
+export function Layout({ children }: { readonly children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -21,18 +20,24 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="flex h-screen">
-          <Sidebar />
-          <div className="flex-1 flex flex-col">
-            <main className="flex-1 p-6">
-              <Outlet />
-            </main>
-          </div>
-        </div>
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="flex h-screen">
+    <Sidebar />
+    <div className="flex-1 flex flex-col">
+      <main className="flex-1 p-6">
+        <Outlet />
+      </main>
+    </div>
+  </div>
   );
 }
 
